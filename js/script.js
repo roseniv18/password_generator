@@ -9,6 +9,8 @@ const submitBtn = document.getElementById("password__submit-button")
 const copyBtn = document.getElementById("password__copy-icon")
 const popup = document.getElementById("password__copy-popup")
 
+// Initial slider value
+passwordLengthEl.innerText = passwordLengthSliderEl.value
 
 submitBtn.addEventListener('click', (e) => {
     // Prevent the page from reloading on button submit
