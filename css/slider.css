@@ -1,0 +1,35 @@
+  
+#password__length-slider {
+    -webkit-appearance: none;
+    height: 15px;
+    border-radius: 7px;
+    background: #fefefe;
+    outline: none;
+    opacity: 0.9;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+  
+#password__length-slider:hover {
+    opacity: 1;
+}
+  
+#password__length-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border: none;
+    border-radius: 50%;
+    background: #e8561c;
+    cursor: pointer;
+}
+  
+#password__length-slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: none;
+    background: #e8561c;
+    cursor: pointer;
+}

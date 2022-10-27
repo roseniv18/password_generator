@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700&display=swap');
+
+body {
+    height: 100vh;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url('/bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Mukta', sans-serif;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    background-color: #171615;
+    color: #fff;
+    width: 33%;
+    padding: 3rem;
+    margin-top: 3rem;
+    border-radius: 7px;
+    position: relative;
+}
+
+.container > header {
+    padding: .5rem 0;
+    font-size: 24px;
+    letter-spacing: 1px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    background-color: #e8561c;
+    text-align: center;
+}
+
+.container > #password__container {
+    position: relative;
+    height: 2.4rem;
+    margin-top: 2.4rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: text;
+    border: 1px solid #fefefe;
+    background-color: #fefefe;
+    border-radius: 7px;
+    color: #e8561c;
+    padding: .25rem .5rem;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+#password__copy-icon {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    transform: translateY(50%);
+    right: 10px;
+}
+
+#password__copy-text {
+    color: #fefefe;
+    background-color: #e8561c;
+    border-radius: 7px;
+    font-size: 18px;
+    position: absolute;
+    right: 0;
+    transform: translateX(25%);
+    top: -70%;
+}
+
+form {
+    margin-top: 2.4rem;
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+}
+
+form > .password__length-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 20px;
+}
+
+#password__length {
+    color: #e8561c;
+}
+
+form > .password__include-container {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #fefefe;
+    padding: 3rem;
+    gap: 1rem;
+}
+
+form .password__include-selection {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .54rem;
+}
+
+
+#password__submit-button {
+    width: 50%;
+    height: 3rem;
+    font-size: 20px;
+    background-color: #e8561c;
+    border: none;
+    border-radius: 7px;
+    color: #fefefe;
+    cursor: pointer;
+    margin: 0 auto;
+    margin-top: 3rem;
+    transition: .3s ease-in-out;
+}
+
+#password__submit-button:hover {
+    transition: .3s ease-in-out;
+    transform: scale(105%);
+}
+
+@media (max-width: 800px) {
+    .container {
+        width: 80%;
+    }
+}
+
+@media (max-width: 400px) {
+    .container {
+        width: 90%;
+        padding: 3rem 1rem;
+    }
+
+    form > .password__length-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    form > .password__include-container {
+        margin-top: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #fefefe;
+        padding: 3rem 1rem;
+        gap: 1rem;
+    }
+}
