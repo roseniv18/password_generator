@@ -78,6 +78,7 @@ const getRandomNumber = () => {
 }
 
 const getRandomSymbol = () => {
+    // Change this to include or exclude certain symbols
     const symbols = "!@#$%^&*()_+-=<>?"
     return symbols[Math.floor(Math.random() * symbols.length)]
 }
