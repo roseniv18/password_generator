@@ -98,14 +98,14 @@ passwordLengthSliderEl.addEventListener('input', (e) => {
 })
 
 copyBtn.addEventListener("click", () => {
+    if(passwordEl.innerText.trim() !== "") {
+        popup.classList.add("show")
 
-    popup.classList.add("show")
-
-    // Remove popup window after 3s
-    setTimeout(() => {
-        popup.classList.remove("show")
-    }, 3000)
-
-    // Copy password to clipboard
-    navigator.clipboard.writeText(passwordEl.innerText)
+        // Remove popup window after 3s
+        setTimeout(() => {
+            popup.classList.remove("show")
+        }, 3000)
+        // Copy password to clipboard
+        navigator.clipboard.writeText(passwordEl.innerText)
+    }
 })
