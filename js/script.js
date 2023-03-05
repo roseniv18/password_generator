@@ -9,6 +9,16 @@ const submitBtn = document.getElementById("password__submit-button")
 const copyBtn = document.getElementById("password__copy-icon")
 const popup = document.getElementById("password__copy-popup")
 
+console.log(zxcvbn("98hyvu56d").score)
+
+const passwordScores = new Map([
+    [0, "Very Weak"],
+    [1, "Weak"],
+    [2, "Medium"],
+    [3, "Strong"],
+    [4, "Very Strong"]
+])
+
 // Initial slider value
 passwordLengthEl.innerText = passwordLengthSliderEl.value
 
@@ -59,7 +69,20 @@ submitBtn.addEventListener('click', (e) => {
         return password.join('')
     }
 
-    passwordEl.innerText = generateRandomPassword(length) || ''
+    const password = generateRandomPassword(length)
+    passwordEl.innerText = password || ""
+    
+    // Regex to check the strength of generated password
+    /* Strong has at least one lowercase letter (?=.*[a-z]), 
+    one uppercase letter (?=.*[A-Z]), one digit (?=.*[0-9]), 
+    one special character (?=.*[^A-Za-z0-9]), and is at least eight characters long(?=.{8,}). */
+    const strongPass = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})/g
+    
+    /* Medium is the same as Strong only it checks for at least six characters*/
+    const mediumPass = /((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,}))/
+
+    console.log(strongPass.test(password))
+    console.log(mediumPass.test(password))
 })
 
 
@@ -91,9 +114,6 @@ const randomFunc = {
     number: getRandomNumber,
     symbol: getRandomSymbol
 }
-
-const strongPass = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})/g
-const mediumPass = /((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,}))/
 
 // Change slider text on change
 passwordLengthSliderEl.addEventListener('input', (e) => {
