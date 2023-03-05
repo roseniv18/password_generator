@@ -1,5 +1,6 @@
 const passwordEl = document.getElementById("password")
 const passwordLengthSliderEl = document.getElementById("password__length-slider")
+const strengthEl = document.getElementById("strength")
 const passwordLengthEl = document.getElementById("password__length")
 const uppercaseEl = document.getElementById("uppercase")
 const lowercaseEl = document.getElementById("lowercase")
@@ -71,7 +72,8 @@ submitBtn.addEventListener('click', (e) => {
 
     const password = generateRandomPassword(length)
     const score = zxcvbn(password).score
-    console.log(passwordScores.get(score))
+    
+    strengthEl.innerText = passwordScores.get(score)
     passwordEl.innerText = password || ""
 })
 
