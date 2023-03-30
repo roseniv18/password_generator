@@ -10,8 +10,6 @@ const submitBtn = document.getElementById("password__submit-button")
 const copyBtn = document.getElementById("password__copy-icon")
 const popup = document.getElementById("password__copy-popup")
 
-console.log(zxcvbn("98hyvu56d").score)
-
 const passwordScores = new Map([
     [0, "Very Weak"],
     [1, "Weak"],
@@ -117,9 +115,11 @@ copyBtn.addEventListener("click", () => {
         popup.classList.add("show")
 
         // Remove popup window after 3s
-        setTimeout(() => {
+        const popupTimeout = setTimeout(() => {
             popup.classList.remove("show")
         }, 3000)
+        popupTimeout
+        clearTimeout(popupTimeout)
         // Copy password to clipboard
         navigator.clipboard.writeText(passwordEl.innerText)
     }
